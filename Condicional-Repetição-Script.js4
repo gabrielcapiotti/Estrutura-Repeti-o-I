@@ -1,0 +1,35 @@
+/*
+Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar
+descontos para todos, mas especialmente para mulheres. Faça um
+programa que leia nome, sexo e o valor das compras do cliente e
+calcule o preço com desconto. Sabendo que:
+a. Homens ganham 5% de desconto
+b. Mulheres ganham 13% de desconto
+*/
+
+let nome = prompt("Digite o sexo do cliente:");
+let sexo = prompt("Digite o sexo do cliente(M pra masculino, F pra feminino.):").toUpperCase();
+let valorCompras = parseFloat(prompt("Digite o valor das compras do cliente:"));
+
+let desconto = 0;
+
+if (sexo === 'M'){
+    desconto = 0.05; // 5% de desconto pra homens.
+} else if(sexo === 'F'){
+    desconto = 0.13; // 13% de desconto pra mulheres.
+
+} else {
+    console.log("Opção de sexo inválida. Por favor, use 'M' para masculino ou 'F' para feminino.");
+}
+
+let valorComDesconto = valorCompras - (valorCompras * desconto);
+
+console.log(`Nome do cliente: ${nome}`);
+console.log(`Valor das compras: R$ ${valorCompras.toFixed(2)}`);
+console.log(`Desconto aplicado: ${desconto * 100}%`);
+console.log(`Valor com desconto: R$ ${valorComDesconto.toFixed(2)}`);
+
+
+
+
+
