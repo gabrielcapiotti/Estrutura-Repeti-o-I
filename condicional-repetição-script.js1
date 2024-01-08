@@ -1,0 +1,29 @@
+/*
+1. Faça um algoritmo que leia a idade de vários alunos de uma turma.
+O programa vai parar quando for digitada a idade 999. No final,
+mostre quantos alunos existem na turma e qual é a média de idade
+do grupo.
+*/
+
+let i = 1;
+let somaIdades = 0;
+let continuar = true;
+
+do {
+    let idade = Number(prompt("Digite a idade ou digite 999 para parar:"));
+
+    if (idade !== 999) {
+        somaIdades += idade;
+        i++;
+    }
+
+    continuar = idade !== 999 && confirm("Deseja continuar inserindo idades?");
+} while (continuar);
+
+if (i > 0) {
+    let mediaIdades = somaIdades / i;
+    console.log(`Foram digitadas ${i} idades.`);
+    console.log(`A média de idade do grupo é ${mediaIdades.toFixed(2)}.`);
+} else {
+    console.log("Nenhuma idade foi digitada.");
+}
